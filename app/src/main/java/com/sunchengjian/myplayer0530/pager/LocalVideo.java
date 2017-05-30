@@ -1,6 +1,7 @@
 package com.sunchengjian.myplayer0530.pager;
 
 import android.content.ContentResolver;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Handler;
@@ -40,8 +41,16 @@ public class LocalVideo extends BaseFragment {
                 //  MediaItem mediaItem = mediaItems.get(position);
                 MediaItem item = (MediaItem) adapter.getItem(position);
 
+                //吊起系统自带的播放器
+                Intent intent = new Intent();
+                intent.setDataAndType(Uri.parse(item.getData()), "video/*");
+                startActivity(intent);
+
             }
         });
+
+
+
         return view;
     }
 
