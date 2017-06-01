@@ -1,54 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
 
-    <!--<include layout="@layout/titlebar"/>-->
-    <include layout="@layout/titlebar1" />
+    tools:context="atguigu.com.homework.MainActivity">
+
+    <include layout="@layout/title"/>
+
 
     <FrameLayout
         android:id="@+id/fl_content"
+        android:layout_weight="0.97"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="0dp">
 
+    </FrameLayout>
 
     <RadioGroup
         android:id="@+id/rg_main"
+        android:background="#44000000"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#22000000"
-        android:orientation="horizontal"
-        android:padding="8dp">
+        android:layout_weight="0.04">
 
         <RadioButton
-            android:id="@+id/rb_local_video"
-            style="@style/myStyle"
-            android:drawableTop="@drawable/rb_local_video_selector"
-            android:text="本地视频" />
+            android:id="@+id/local_video"
+            android:text="本地视频"
+            android:drawableTop="@drawable/select_loaclvideo"
+
+            style="@style/bottom_style"
+            />
+        <RadioButton
+            android:id="@+id/local_music"
+            android:text="本地音乐"
+            android:drawableTop="@drawable/select_loaclmusic"
+            style="@style/bottom_style"
+            />
 
         <RadioButton
-            android:id="@+id/rb_local_audio"
-            style="@style/myStyle"
-            android:drawableTop="@drawable/rb_local_audio_selector"
-            android:text="本地音频" />
+            android:id="@+id/net_video"
+            android:text="网络视频"
+            android:drawableTop="@drawable/select_loaclvideo"
 
+            style="@style/bottom_style"
+            />
         <RadioButton
-            android:id="@+id/rb_net_audio"
-            style="@style/myStyle"
-            android:drawableTop="@drawable/rb_net_audio_selector"
-            android:text="网络音频" />
-
-        <RadioButton
-            android:id="@+id/rb_net_video"
-            style="@style/myStyle"
-            android:drawableTop="@drawable/rb_net_video_selector"
-            android:text="网络视频" />
+            android:id="@+id/net_music"
+            android:text="端午安康"
+            android:drawableTop="@drawable/select_netmusic"
+            style="@style/bottom_style"
+            />
 
     </RadioGroup>
 
 </LinearLayout>
-
